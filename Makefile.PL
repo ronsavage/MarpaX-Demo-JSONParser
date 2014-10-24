@@ -14,6 +14,8 @@ all_from 'lib/MarpaX/Demo/JSONParser.pm';
 
 install_share;
 
+repository 'https://github.com/ronsavage/MarpaX-Demo-JSONParser';
+
 requires 'File::Basename' => 2.82;
 requires 'File::ShareDir' => 1.03;
 requires 'File::Slurp'    => 0.051003;
