@@ -501,6 +501,8 @@ I (Ron) converted their code into forms suitable for building this module.
 
 He developed this in August, 2014, after recent significant progress in the writing of Marpa.
 
+=back
+
 =head2 Where is Marpa's Homepage?
 
 L<http://savage.net.au/Marpa.html>.
