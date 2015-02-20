@@ -1,7 +1,8 @@
 Revision history for Perl extension MarpaX::Demo::JSONParser.
 
-1.07  Unreleased.
-	- Add github repo to Makefile.PL.
+1.07  Wed Feb 18 16:32:00 2015
+	- Rename CHANGES to Changes as perl CPAN::Spec::Changes.
+	- Add github repo to docs and Makefile.PL.
 
 1.06  Sun Aug 31 09:12:00 2014
 	- Add data/json.3.bfn, Jeffrey Kegler's latest grammar, which uses MarpaX::Simple.

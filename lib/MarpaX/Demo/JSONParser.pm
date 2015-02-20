@@ -53,7 +53,7 @@ has scanner =>
 	required => 0,
 );
 
-our $VERSION = '1.06';
+our $VERSION = '1.07';
 
 # ------------------------------------------------
 
@@ -528,6 +528,10 @@ L<MarpaX::Languages::C::AST>.
 =head1 Machine-Readable Change Log
 
 The file Changes was converted into Changelog.ini by L<Module::Metadata::Changes>.
+
+=head1 Repository
+
+L<https://github.com/ronsavage/MarpaX-Demo-JSONParser>
 
 =head1 Version Numbers
 
