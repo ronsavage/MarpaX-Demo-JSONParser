@@ -38,6 +38,7 @@ my(%params) =
 		'Perl'				=> 5.014000,
 		'strict'			=> 0,
 		'Try::Tiny'			=> 0.27,
+		'Types::Standard'	=> 1.000005,
 		'warnings'			=> 0,
 	},
 	TEST_REQUIRES =>

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use File::Basename; # For basename.
-use File::Slurp;    # For read_file().
+use File::Slurper 'read_text';
 
 use Marpa::R2;
 
@@ -13,44 +13,46 @@ use MarpaX::Simple qw(gen_parser);
 
 use Moo;
 
+use Types::Standard /Any Str/;
+
 has base_name =>
 (
-	default  => sub {return ''},
-	is       => 'rw',
-#	isa      => 'Str',
-	required => 0,
+	default		=> sub {return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
 );
 
 has bnf_file =>
 (
-	default  => sub {return ''},
-	is       => 'rw',
-#	isa      => 'Str',
-	required => 1,
+	default		=> sub {return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 1,
 );
 
 has grammar =>
 (
-	default  => sub {return ''},
-	is       => 'rw',
-#	isa      => 'Marpa::R2::Scanless::G',
-	required => 0,
+	default		=> sub {return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 has parser =>
 (
-	default  => sub {return ''},
-	is       => 'rw',
-#	isa      => 'Marpa::R2::Scanless::G',
-	required => 0,
+	default		=> sub {return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 has scanner =>
 (
-	default  => sub {return ''},
-	is       => 'rw',
-#	isa      => 'Marpa::R2::Scanless::R',
-	required => 0,
+	default		=> sub {return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 our $VERSION = '1.07';
@@ -60,7 +62,7 @@ our $VERSION = '1.07';
 sub BUILD
 {
 	my($self) = @_;
-	my $bnf   = read_file($self -> bnf_file, binmode => ':utf8');
+	my $bnf   = read_text $self -> bnf_file;
 
 	$self -> base_name(basename($self -> bnf_file) );
 
