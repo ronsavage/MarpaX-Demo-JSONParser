@@ -13,7 +13,7 @@ use MarpaX::Simple qw(gen_parser);
 
 use Moo;
 
-use Types::Standard /Any Str/;
+use Types::Standard qw/Any Str/;
 
 has base_name =>
 (
