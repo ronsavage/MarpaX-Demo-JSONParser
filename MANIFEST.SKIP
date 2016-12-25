@@ -69,4 +69,4 @@
 \bbuild.com$
 ^MANIFEST\.SKIP
 
-^MarpaX-Grammar-GraphViz2-.*
+^MarpaX-Demo-JSONParser-.*
