@@ -1,41 +1,72 @@
+
+#!start included /home/ron/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/ExtUtils/MANIFEST.SKIP
 # Avoid version control files.
-,v$
-\B\.cvsignore$
-\B\.git\b
-\B\.svn\b
-\bCVS\b
 \bRCS\b
+\bCVS\b
+\bSCCS\b
+,v$
+\B\.svn\b
+\B\.git\b
+\B\.gitignore\b
+\b_darcs\b
+\B\.cvsignore$
+
+# Avoid VMS specific MakeMaker generated files
+\bDescrip.MMS$
+\bDESCRIP.MMS$
+\bdescrip.mms$
 
 # Avoid Makemaker generated and utility files.
-\bblib
-\bblibdirs$
-\bpm_to_blib$
+\bMANIFEST\.bak
 \bMakefile$
+\bblib/
 \bMakeMaker-\d
-^MANIFEST\.SKIP$
+\bpm_to_blib\.ts$
+\bpm_to_blib$
+\bblibdirs\.ts$         # 6.18 through 6.25 generated this
 
 # Avoid Module::Build generated and utility files.
-\b_build
 \bBuild$
+\b_build/
 \bBuild.bat$
-
-# Avoid Devel::Cover generated files
-\bcover_db
+\bBuild.COM$
+\bBUILD.COM$
+\bbuild.com$
 
 # Avoid temp and backup files.
 ~$
-\#$
-\.#
-\.bak$
 \.old$
-\.rej$
+\#$
+\b\.#
+\.bak$
 \.tmp$
+\.#
+\.rej$
 
 # Avoid OS-specific files/dirs
-#   Mac OSX metadata
+# Mac OSX metadata
 \B\.DS_Store
-#   Mac OSX SMB mount metadata files
+# Mac OSX SMB mount metadata files
 \B\._
 
-^MYMETA.yml$
-^MYMETA\.json$
+# Avoid Devel::Cover and Devel::CoverX::Covered files.
+\bcover_db\b
+\bcovered\b
+
+# Avoid MYMETA files
+^MYMETA\.
+#!end included /home/ron/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/ExtUtils/MANIFEST.SKIP
+
+# Avoid configuration metadata file
+^MYMETA\.
+
+# Avoid Module::Build generated and utility files.
+\bBuild$
+\bBuild.bat$
+\b_build
+\bBuild.COM$
+\bBUILD.COM$
+\bbuild.com$
+^MANIFEST\.SKIP
+
+^MarpaX-Grammar-GraphViz2-.*
