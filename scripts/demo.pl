@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-use File::ShareDir;
-
 use MarpaX::Demo::JSONParser;
 
 use Try::Tiny;
@@ -13,7 +11,7 @@ use Try::Tiny;
 
 my($app_name) = 'MarpaX-Demo-JSONParser';
 my($bnf_name) = shift || 'json.1.bnf'; # Or 'json.2.bnf'.
-my($bnf_file) = File::ShareDir::dist_file($app_name, $bnf_name);
+my($bnf_file) = "data/$bnf_name";
 my($string)   = '{"test":"1.25e4"}';
 
 my($message);

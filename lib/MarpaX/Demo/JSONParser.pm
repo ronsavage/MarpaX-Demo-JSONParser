@@ -278,15 +278,13 @@ C<MarpaX::Demo::JSONParser> - A JSON parser with a choice of grammars
 	use strict;
 	use warnings;
 
-	use File::ShareDir;
-
 	use MarpaX::Demo::JSONParser;
 
 	use Try::Tiny;
 
 	my($app_name) = 'MarpaX-Demo-JSONParser';
 	my($bnf_name) = 'json.1.bnf'; # Or 'json.2.bnf'. See scripts/find.grammars.pl below.
-	my($bnf_file) = File::ShareDir::dist_file($app_name, $bnf_name);
+	my($bnf_file) = "data/$bnf_name";
 	my($string)   = '{"test":"1.25e4"}';
 
 	my($message);
@@ -387,15 +385,15 @@ These JSON grammars are discussed in the L</FAQ> below.
 
 =over 4
 
-=item o share/json.1.bnf
+=item o data/json.1.bnf
 
 This JSON grammar was devised by Peter Stuifzand.
 
-=item o share/json.2.bnf
+=item o data/json.2.bnf
 
 This JSON grammar was devised by Jeffrey Kegler.
 
-=item o share/json.3.bnf
+=item o data/json.3.bnf
 
 This JSON grammar was devised by Jeffrey Kegler.
 
@@ -434,50 +432,10 @@ It will print the name of the path to given grammar file.
 
 =head2 Where are the grammar files actually installed?
 
-They are not installed (when the source code is) under V 1.00.
+They are not installed (when the source code is). They are shipped in the data/ dir.
 
-From V 1.01 on, I use L<File::ShareDir> and L<Module::Install> to install them.
-
-This a complex topic. Here are some of the issues:
-
-=over 4
-
-=item o Module::Install makes it hard to update *META.* after you update the module's version #
-
-It puts them in the dist but not in the current directory (alongside Makefile.PL, etc).
-
-=item o Install in the user's home directory, using L<File::HomeDir>
-
-Problem: Some CPAN testers run with accounts which don't have home directories.
-
-I have used L<File::HomeDir> when shipping modules, but that problem means I switched to L<File::ShareDir>. But...
-
-=item o Install in a shared directory, using L<File::ShareDir>
-
-Problem: Using L<File::ShareDir> requires L<Module::Install> during installation.
-
-The latter has 77 bugs on RT, although some of them may have been fixed.
-
-Problem: Using L<File::ShareDir> requires using Makefile.PL rather that my preferred choice Build.PL.
-
-Sigh.
-
-Problem: Using L<File::ShareDir> means the grammar files will be installed many directories deep.
-
-Again, this is something I don't like doing. On my machine, there are 13 dir names listed when I run
-scripts/find.grammars.pl.
-
-Problem: Using L<Module::Install> by itself does not support author tests.
-
-That needs L<Module::Install::AuthorTests>.
-
-=back
-
-Depite all this, for V 1.01 I've used L<File::ShareDir>. And you can now run:
-
-	shell> perl scripts/find.grammars.pl
-
-This reports the directory into which the grammars were installed.
+I used to use L<File::ShareDir> and L<Module::Install> to install them, but Module::Install is now
+unusable. See Changes for details.
 
 =head2 Which JSON BNF is best?
 

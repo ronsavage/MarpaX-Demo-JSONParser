@@ -6,7 +6,6 @@ use MarpaX::Demo::JSONParser;
 use Path::Tiny; # For path().
 
 use Test::More;
-use Test::Exception;
 
 use Try::Tiny;
 
@@ -264,7 +263,7 @@ JSON
 
 for (qw/json.1.bnf json.2.bnf json.3.bnf/)
 {
-	run_tests(path('share', $_) );
+	run_tests(path('data', $_) );
 }
 
 print "# Internal test count: $test_count. \n";

@@ -6,6 +6,11 @@ Revision history for Perl extension MarpaX::Demo::JSONParser.
 	- Adopt new repo structure. See
 		http://savage.net.au/Ron/html/My.Workflow.for.Building.Distros.html.
 	- Change licence from Artistic to Perl.
+	- Module::Install V 1.17, installed 2016-12-26 is unusable with Perl V 5.20.2. I get:
+		Prototype mismatch: sub main::prompt ($;$) vs none at inc/Module/Install.pm line 225.
+		So, wipe out all trace of it, including zapping File::ShareDir and moving share/ to data/.
+		This means the sample JSON BNF files are no longer installed, just shipped in data/.
+	- Switch from File::Slurp to File::Slurper.
 
 1.06  2014-08-31T09:12:00
 	- Add data/json.3.bfn, Jeffrey Kegler's latest grammar, which uses MarpaX::Simple.
