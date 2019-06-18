@@ -5,18 +5,19 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use Tree; # For the version #.
+use MarpaX::Demo::JSONParser; # For the version #.
 
 use Test::More;
 
-use base;
-use constant;
-use Data::Dumper;
-use Exporter;
-use lib;
-use overload;
-use Scalar::Util;
+use File::Basename;
+use File::Slurper;
+use Marpa::R2;
+use MarpaX::Simple;
+use Moo;
+use Path::Tiny;
 use strict;
+use Try::Tiny;
+use Types::Standard;
 use warnings;
 
 # ----------------------
@@ -25,18 +26,19 @@ pass('All external modules loaded');
 
 my(@modules) = qw
 /
-	base
-	constant
-	Data::Dumper
-	Exporter
-	lib
-	overload
-	Scalar::Util
+	File::Basename
+	File::Slurper
+	Marpa::R2
+	MarpaX::Simple
+	Moo
+	Path::Tiny
 	strict
+	Try::Tiny
+	Types::Standard
 	warnings
 /;
 
-diag "Testing Tree V $Tree::VERSION";
+diag "Testing MarpaX::Demo::JSONParser V $MarpaX::Demo::JSONParser::VERSION";
 
 for my $module (@modules)
 {
