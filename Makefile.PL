@@ -43,7 +43,7 @@ my(%params) =
 	},
 	TEST_REQUIRES =>
 	{
-		'Test::More'	=> 1.001014,
+		'Test::More'	=> 1.001002,
 		'Test::Pod'		=> 1.48,
 	},
 	VERSION_FROM => 'lib/MarpaX/Demo/JSONParser.pm',
